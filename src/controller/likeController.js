@@ -11,7 +11,7 @@ const likeVideo = async (req, res) => {
 
     const likeCount = await likeVideoService(videoId, userIp);
 
-    res.status(204).json({ liked: true, likeCount });
+    res.status(200).json({ liked: true, likeCount });
   } catch (error) {
     console.error("Error liking video:", error);
     if (error.message === "You have already liked this video") {
@@ -26,7 +26,7 @@ const unLikeVideo = async (req, res) => {
     const { videoId } = await req.body;
     const userIp = req.ip;
     const likeCount = await unLikeVideoService(videoId, userIp);
-    res.status(204).json({ liked: false, likeCount });
+    res.status(200).json({ liked: false, likeCount });
   } catch (error) {
     console.error("Error liking video:", error);
     res.status(500).json({ message: "Server Error" });

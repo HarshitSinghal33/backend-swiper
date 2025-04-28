@@ -10,7 +10,7 @@ import { shareVideo } from "../controller/shareController.js";
 const router = express.Router();
 
 router.get("/videos", getVideos);
-router.get("/videos/:videoId/like", checkLiked);
+router.get("/videos/:videoId/checklike", checkLiked);
 router.post("/like", likeVideo);
 router.post("/share", shareVideo);
 router.post("/unlike", unLikeVideo);
