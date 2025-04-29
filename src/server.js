@@ -5,9 +5,8 @@ import cors from "cors";
 import { videoRoutes } from "./routes/videoRoutes.js";
 import { rateLimiter } from "./middleware/rateLimiter.js";
 import helmet from "helmet";
-
 dotenv.config();
-const PORT = 3000;
+
 const app = express();
 
 app.use(helmet());
