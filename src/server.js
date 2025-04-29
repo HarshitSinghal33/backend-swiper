@@ -19,8 +19,6 @@ app.use(
 app.use(express.json());
 
 connectDatabase();
-app.use("/api", rateLimiter, videoRoutes)
+app.use("/api", rateLimiter, videoRoutes);
 
-app.listen(PORT, () => {
-  console.log("running on:", PORT);
-});
+export default app;
